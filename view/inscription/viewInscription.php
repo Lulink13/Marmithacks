@@ -1,4 +1,4 @@
-<form method='post' action='http://localhost\wow_yes\controller/inscription.php'>
+<form method='post' action='http://localhost\controller/inscription.php'>
 
    Login : <input type='text' name='login'> <br/>
 
@@ -10,4 +10,4 @@
 
 </form>
 
-<a href='http://localhost\wow_yes\view\accueil/userNotConnected.php'> retour </a>
+<a href='http:\\localhost\view\accueil\userNotConnected.php'> retour </a>
