@@ -27,7 +27,7 @@ if ($username != "" && $password != "") {
     ));
 }
 
-header('location: http://localhost\wow_yes\view\accueil\userNotConnected.php');
+header('location: http://localhost\view\accueil\userNotConnected.php');
 
 
 ?>

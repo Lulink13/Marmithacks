@@ -1,4 +1,4 @@
-<form method='post' action='accueil.php'>
+<form method='post' action='accueil/userConnected.php'>
 
    Login : <input type='text' name='login'> <br/>
 

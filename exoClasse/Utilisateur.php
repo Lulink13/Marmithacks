@@ -19,52 +19,52 @@ class Utilisateur
             echo "date de  creation ".$this->dateCreation."<br/>";
     }
 
-    public function  connexion() {
+    public function connexion() {
 
         $date = new DateTime('now');
         $this->derniereConnexion = $date->format('Y-m-d');
     }
 
-    public getNom() {
+    public function getNom() {
 
         return $this->nom;
     }
 
-    public setNom($pNom='DEPP') {
+    public function setNom($pNom='DEPP') {
 
         $this->nom=$pNom;
 
     }
 
-    public getPrenom() {
+    public function getPrenom() {
 
         return $this->prenom;
     }
 
-    public setPrenom($pPrenom='Johnny') {
+    public function setPrenom($pPrenom='Johnny') {
 
         $this->prenom=$pPrenom;
 
     }
-    public getLogin() {
+    public function getLogin() {
 
         return $this->login;
     }
 
-    public setNom($plogin='Johnicolekdimandepp') {
+    public function setLogin($pLogin='Johnicolekdimandepp') {
 
         $this->login=$pLogin;
 
     }
 
-    public getMdp() {
+    public function getMdp() {
 
         return $this->mdp;
     }
 
-    public setMdp($pMdp='Johnny123') {
+    public function setMdp($pMdp='Johnny123') {
 
-        if(preg_match('/[a-z]/', $pMdp) === 0 && preg_match('/[A-Z]/', $pMdp) === 0 && preg_match('/\d/', $pMdp) === 0 && $pMdp.sizeof() >= 6) {
+        if(preg_match('/[a-z]/', $pMdp) === 0 && preg_match('/[A-Z]/', $pMdp) === 0 && preg_match('/\d/', $pMdp) === 0 && $pMdp.sizeof($pMdp) >= 6) {
 
             $this->mdp=$pMdp;
         }
@@ -75,12 +75,12 @@ class Utilisateur
 
     }
 
-    public getDateCreation() {
+    public function getDateCreation() {
 
         return $this->dateCreation;
     }
 
-    public setDateCreation($pDateCreation) {
+    public function setDateCreation($pDateCreation) {
 
         $tabDate = explode('/', $pDateCreation);
         if (checkdate($tabDate[1], $tabDate[0], $tabDate[2]) === true) {
@@ -93,12 +93,12 @@ class Utilisateur
 
     }
 
-    public getDateConnexion() {
+    public function getDateConnexion() {
 
         return $this->dateCreation;
     }
 
-    public setDateConnexion($pDateCreation) {
+    public function setDateConnexion($pDateCreation) {
 
         $tabDate = explode('/', $pDateCreation);
         if (checkdate($tabDate[1], $tabDate[0], $tabDate[2]) === true) {
