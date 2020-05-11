@@ -1,5 +1,5 @@
 <?php
 
-header('location: http://localhost\wow_yes\view\accueil\userNotConnected.php');
+header('location: http://localhost/Marmithacks/controller/home.php');
 
 ?>

@@ -5,9 +5,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=web', 'root', '');
 
 $req = $bdd->query('SELECT * FROM utilisateur ' );
 
-
-
-
 while ($donnees = $req->fetch())
 {
     echo '<pre>';
@@ -25,11 +22,5 @@ $req->execute(array(
 'oldLogin' => 'michel'
 
 ));
-
-
-
-
-
-
 
 ?>
