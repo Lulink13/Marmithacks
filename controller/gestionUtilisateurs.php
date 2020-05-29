@@ -12,8 +12,10 @@ if (isset($_SESSION['user'])) {
     } else {
         $userPicture = '../assets/images/default_user.png';
     }
-    
+    if ($admin == '1') {
+        require_once '../view/gestionUtilisateursView.php';
+    } else {
+        header('Location: connexion.php');
+    }
 }
-require_once '../view/homeView.php';
-
 ?>

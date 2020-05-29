@@ -1,5 +1,5 @@
 <?php
 
-header('location: http://localhost/Marmithacks/controller/home.php');
+header('location: controller/home.php');
 
 ?>
