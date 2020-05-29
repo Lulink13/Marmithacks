@@ -2,18 +2,18 @@
     <p id="footer-text">
         <a id="footer-about"
            href="about.php">
-            about
+            a propos
         </a>
         -
         <a id="footer-contact"
-           href="mailto:marmithack.contact@gmail.com?subject=Please provide a short reason for contacting us"
+           href="mailto:marmithack.contact@gmail.com?subject=Merci de d'expliciter la raison de votre mail en objet"
            target="_blank">
-            contact us
+            nous contacter
         </a>
         -
         <a id="footer-tos"
            href="tos.php">
-            terms of service
+            conditions d'utilisation
         </a>
     </p>
     <p id="footer-copyright">
