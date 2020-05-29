@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
         <title>INSCRIPTION</title>
     </head>
     <body id="body_inscription">
