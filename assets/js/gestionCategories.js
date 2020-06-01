@@ -31,15 +31,10 @@ $(function() {
             method: 'post',
             url: '../controller/ajoutCategory.php',
             data: 'id='+idCategory+'&name='+nameCategory,
-            success: function(html) {
-                
+            success: function() {
+                window.location.href = 'gestionCategories.php';
             }
         })
-        var fd = new FormData();
-        //fd.append('file',pictureUser);
-
-        
-        window.location.href = 'gestionCategories.php';
     })
 
     $(document).on('click', '#form_modif_category-btn_annul', function() {

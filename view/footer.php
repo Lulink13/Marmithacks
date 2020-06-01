@@ -1,5 +1,5 @@
 <div id="footer">
-    <p id="footer-text">
+    <div id="footer-text">
         <a id="footer-about"
            href="about.php">
             a propos
@@ -15,7 +15,7 @@
            href="tos.php">
             conditions d'utilisation
         </a>
-    </p>
+</div>
     <p id="footer-copyright">
         © Marmit'Hacks 2020
     </p>

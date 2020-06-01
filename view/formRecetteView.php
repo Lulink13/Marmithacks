@@ -41,6 +41,7 @@
                 <input id="form_recette-valid" type="submit" value="Valider" id="valider">
             </form>
         </div>
+        <?php require_once 'footer.php';?>
         <div id="gestion_users-window_cover"></div>
         <script src="../assets/js/bootstrap.min.js"></script>
     </body>

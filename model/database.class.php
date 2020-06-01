@@ -1,6 +1,8 @@
 <?php
 require_once 'user.class.php';
 require_once 'category.class.php';
+require_once 'tagCategory.class.php';
+require_once 'tag.class.php';
 class Database {
     private $bdd;
 
@@ -9,7 +11,7 @@ class Database {
             $host = 'localhost';
             $dbname = 'marmithacks';
             $user = 'root';
-            $mdp = '';
+            $mdp = 'C7w6vrX52V';
         } else {
             $host = 'mysql-marmithacks.alwaysdata.net';
             $dbname = 'marmithacks_bdd';
@@ -129,7 +131,7 @@ class Database {
 
         foreach ($listTagCategory as $tagCategories) {
             $tagCategory = new TagCategory($tagCategories);
-            $tagCategory->setTagList($this->getListTags($tagCategory->id));
+            $tagCategory->setTagList($this->getListTags($tagCategory->getId()));
             array_push($arrayTagCategory, $tagCategory);
         }
         return $arrayTagCategory;
