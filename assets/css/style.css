@@ -99,6 +99,25 @@ html, body {
 }
 
 
+/*/////////////////////// RECIPEGRID ///////////////////////*/
+#recipeGrid {
+    margin: 0px;
+    max-width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#card-container {
+    padding: 15px;
+}
+#card * {
+    margin-bottom: 8px;
+}
+#card a h4,#card p {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+
 /*/////////////////////// FOOTER ///////////////////////*/
 #footer {
     background: linear-gradient(180deg, #2f79df, #002d9b);

@@ -8,7 +8,7 @@ class Database {
             $host = 'localhost';
             $dbname = 'marmithacks';
             $user = 'root';
-            $mdp = 'C7w6vrX52V';
+            $mdp = '';
         } else {
             $host = 'mysql-marmithacks.alwaysdata.net';
             $dbname = 'marmithacks_bdd';
