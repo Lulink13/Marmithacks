@@ -1,5 +1,6 @@
 <?php
 require_once 'user.class.php';
+require_once 'category.class.php';
 class Database {
     private $bdd;
 
@@ -8,7 +9,7 @@ class Database {
             $host = 'localhost';
             $dbname = 'marmithacks';
             $user = 'root';
-            $mdp = 'C7w6vrX52V';
+            $mdp = '';
         } else {
             $host = 'mysql-marmithacks.alwaysdata.net';
             $dbname = 'marmithacks_bdd';
@@ -76,6 +77,46 @@ class Database {
         $req->bindValue(':admin', $user->getAdmin(), PDO::PARAM_STR);
         $req->bindValue(':picture', $user->getPicture(), PDO::PARAM_STR);
         $req->bindValue(':id', $user->getId(), PDO::PARAM_STR);
+        $req->execute();
+    }
+
+    public function getCategoryParams($id) {
+        $req = $this->bdd->prepare('SELECT * FROM t_category WHERE K_ID = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->execute();
+        return new Category($req->fetch(PDO::FETCH_ASSOC));
+    }
+
+    public function getListCategories() {
+        $req = $this->bdd->prepare('SELECT * FROM t_category');
+        $req->execute();
+        $listCategories = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrayCategories = array();
+
+        foreach ($listCategories as $categories) {
+            $category = new Category($categories);
+            array_push($arrayCategories, $category);
+        }
+        return $arrayCategories;
+    }
+
+    public function deleteCategory($id) {
+        $req = $this->bdd->prepare('DELETE FROM t_category WHERE K_ID = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->execute();
+    }
+
+    public function ajoutCategory($category) {
+        $req = $this->bdd->prepare('INSERT INTO t_category VALUES (NULL, :name)');
+        $req->bindValue(':name', $category->getName(), PDO::PARAM_STR);
+        $req->execute();
+    }
+
+    public function modifCategory($category) {
+        $req = $this->bdd->prepare('UPDATE t_category SET F_Name = :name WHERE K_ID = :id');
+        $req->bindValue(':name', $category->getName(), PDO::PARAM_STR);
+        $req->bindValue(':id', $category->getId(), PDO::PARAM_STR);
         $req->execute();
     }
 

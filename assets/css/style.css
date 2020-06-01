@@ -262,6 +262,7 @@ html, body {
     align-items: center;
     display: none;
 }
+
 #container_confirm_suppr {
     width: 400px;
     height: 125px;
@@ -350,6 +351,150 @@ html, body {
     background-color: #FFF;
 }
 
+
+
+
+/*/////////////// GESTION CATEGORIES ////////////////*/
+
+#body-gestion_categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#body-gestion_categories table {
+    width: 900px;
+    margin-top: 20px;
+}
+#gestion_categories-btn_ajout {
+    width: 500px;
+    height: 45px;
+    background-color: #DDDDDD;
+    border: 2px solid #EEE;
+    color: #666;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 42px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.gestion_categories-vignette_categories {
+    width: 600px;
+    height: 75px;
+    font-size: 20px;
+}
+.vignette_category-image_action {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+
+.vignette_user-bloc_action {
+    display: flex;
+    height: 100px;
+    align-items: center;
+}
+
+#gestion_categories-window_cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50,50,50,0.6);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#container_confirm_category_suppr {
+    width: 400px;
+    height: 125px;
+    background-color: #EEE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 4px;
+}
+#container_confirm_suppr_category-text {
+    width: 400px;
+    text-align: center;
+    font-size: 20px;
+}
+#container_confirm_suppr_category-valider, #container_confirm_suppr_category-annuler {
+    width: 75px;
+    height: 35px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#container_confirm_suppr_category-valider {
+    background-color: green;
+}
+#container_confirm_suppr_category-annuler {
+    background-color: #de4041;
+}
+
+/*/////////////// MODIF CATEGORIES //////////////////*/
+
+#form_modif_category {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    font-size: 20px;
+}
+
+#form_modif_category div {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#form_modif_category-titre {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    height: 95px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+#form_modif_category-name input {
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding-left: 10px;
+}
+
+
+#form_modif_category-bloc_valid {
+    margin-top: 35px;
+    margin-bottom: 30px !important;
+}
+
+#form_modif_category-bloc_valid div {
+    width: 130px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+}  
+
+#form_modif_category-btn_valid {
+    border: 1px solid black;
+    background-color: #FFF;
+}
 
 /*/////////////////// PAGE INSCRIPTION /////////////////////*/
 #body_inscription {
