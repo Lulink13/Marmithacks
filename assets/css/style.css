@@ -1,0 +1,462 @@
+@font-face {
+    font-family: RobotoRegular;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: Lobster;
+    src: url("../fonts/Lobster-Regular.ttf");
+  }
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: RobotoRegular;
+}
+
+
+/*/////////////////////// HEADER ///////////////////////*/
+
+#header {
+    background: linear-gradient(#17abfd, #0062e0);
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+#header-titre {
+    margin-left: 20px;
+    font-family: Lobster;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+}
+#header-titre:hover {
+    cursor: pointer;
+}
+#header-titre:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+#header-bloc_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header-btn_inscription {
+    margin-right: 20px;
+    color: #fff;
+}
+#header-btn_connexion {
+    margin-right: 20px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #004299;
+    border-radius: 30px;
+    box-shadow: #000 0px 0px 5px;
+    user-select: none;
+    text-decoration: none;
+}
+#header-btn_connexion:hover {
+    cursor: pointer;
+    box-shadow: #000 0px 0px 10px;
+}
+#header-btn_connexion:visited {
+    text-decoration: none;
+    color: #fff;
+}
+#header-btn_connexion img {
+    height: 80%;
+    margin-right: -20px;
+}
+#header-nom_user {
+    width: 200px;
+    height: 50px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#header-image_user {
+    width: 80px;
+    object-fit: contain;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+#header-dropdown {
+    width: 20px;
+    object-fit: contain;
+    margin-left: 5px;
+}
+#dropdownMenuButton {
+    border: 0px;
+    background-color: transparent;
+    height: 90px;
+    font-size: 20px;
+}
+
+
+/*/////////////////// PAGE CONNEXION /////////////////////*/
+
+:root {
+    --input-padding-x: .75rem;
+    --input-padding-y: .75rem;
+}
+#body_connexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form_connexion {
+    width: 500px;
+    height: 340px;
+    background-color: #4b9dfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #eaeced;
+}
+#form_connexion-titre {
+    font-size: 40px;
+    font-family: Lobster;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+    width: 68%;
+}
+.form-label-group > input,
+.form-label-group > label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+.form-label-group > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+.form-label-group input::-webkit-input-placeholder .form-label-group input:-ms-input-placeholder .form-label-group input::-ms-input-placeholder .form-label-group input::-moz-placeholder .form-label-group input::placeholder {
+    color: transparent;
+}
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+.form-label-group input:not(:placeholder-shown) ~ label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: #777;
+}
+
+#form_connexion a {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+
+#toolbar {
+    background-color: #f3f3f3;
+    height: 50px;
+}
+
+/*/////////////// GESTION USERS ////////////////*/
+
+#body-gestion_users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#body-gestion_users table {
+    width: 900px;
+    margin-top: 20px;
+}
+#gestion_users-btn_ajout {
+    width: 500px;
+    height: 45px;
+    background-color: #DDDDDD;
+    border: 2px solid #EEE;
+    color: #666;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 42px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.gestion_users-vignette_user {
+    width: 600px;
+    height: 75px;
+    font-size: 20px;
+}
+.vignette_user-image_action {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.vignette_user-image {
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+.vignette_user-admin {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+.vignette_user-bloc_action {
+    display: flex;
+    height: 100px;
+    align-items: center;
+}
+
+#gestion_users-window_cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50,50,50,0.6);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#container_confirm_suppr {
+    width: 400px;
+    height: 125px;
+    background-color: #EEE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 4px;
+}
+#container_confirm_suppr-text {
+    width: 400px;
+    text-align: center;
+    font-size: 20px;
+}
+#container_confirm_suppr-valider, #container_confirm_suppr-annuler {
+    width: 75px;
+    height: 35px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#container_confirm_suppr-valider {
+    background-color: green;
+}
+#container_confirm_suppr-annuler {
+    background-color: #de4041;
+}
+
+/*/////////////// MODIF USER //////////////////*/
+
+#form_modif_user {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    font-size: 20px;
+}
+
+#form_modif_user div {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#form_modif_user-titre {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    height: 95px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+#form_modif_user-name input, #form_modif_user-surname input, #form_modif_user-username input, #form_modif_user-password input, #form_modif_user-mail input {
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding-left: 10px;
+}
+
+#form_modif_user-admin input {
+    width: 30px;
+    height: 30px;
+}
+
+#form_modif_user-picture input {
+    width: 165px;
+}
+
+#form_modif_user-bloc_valid {
+    margin-top: 35px;
+    margin-bottom: 30px !important;
+}
+
+#form_modif_user-bloc_valid div {
+    width: 130px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+}  
+
+#form_modif_user-btn_valid {
+    border: 1px solid black;
+    background-color: #FFF;
+}
+
+
+
+/*/////////////////// PAGE INSCRIPTION /////////////////////*/
+
+#body_inscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form_inscription {
+    width: 500px;
+    background-color: #4b9dfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #eaeced;
+}
+#form_inscription div {
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 18px;
+}
+#form_inscription div input { 
+    width: 240px;
+    height: 22px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+}
+#form_inscription-titre {
+    justify-content: center !important;
+    font-size: 40px !important;
+    font-family: Lobster;
+    color: #fff;
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+}
+
+#form_inscription-picture input {
+    border: 0 !important;
+}
+
+#form_inscription-valider {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#container_inscription_success {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eee;
+    border: 1px solid #000;
+    border-radius: 3px;
+    margin-top: -200px;
+}
+#container_inscription_success div {
+    text-align: center;
+}
+
+
+/*/////////////////// AJOUT RECETTE /////////////////////*/
+
+#body_form_recette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#form_recette {
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#form_recette div {
+    width: 570px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#form_recette-titre {
+    justify-content: center !important;
+    font-size: 27px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#form_recette div input, #form_recette div select, #form_recette div textarea {
+    width: 255px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#form_recette div textarea {
+    max-height: 160px;
+    min-height: 70px;
+}
+#form_recette-ingredients div, #form_recette-etapes div {
+    width: 280px;
+}
+#form_recette-valid {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 110px;
+    height: 35px;
+    font-size: 18px;
+    cursor: pointer;
+}
