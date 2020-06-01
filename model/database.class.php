@@ -3,6 +3,10 @@ require_once 'user.class.php';
 require_once 'category.class.php';
 require_once 'tagCategory.class.php';
 require_once 'tag.class.php';
+require_once 'difficulty.class.php';
+require_once 'cost.class.php';
+require_once 'recette.class.php';
+require_once 'step.class.php';
 class Database {
     private $bdd;
 
@@ -153,5 +157,71 @@ class Database {
 
     }
 
+    public function getListDifficulties() {
+        $req = $this->bdd->prepare('SELECT * FROM t_difficulty ORDER BY K_ID ASC');
+        $req->execute();
+        $listDifficulties = $req->fetchAll(PDO::FETCH_ASSOC);
+        $arrayDifficulties = array();
+
+        foreach ($listDifficulties as $difficulties) {
+            $difficulty = new Difficulty($difficulties);
+            array_push($arrayDifficulties, $difficulty);
+        }
+        return $arrayDifficulties;
+    }
+
+    public function getListCosts() {
+        $req = $this->bdd->prepare('SELECT * FROM t_cost ORDER BY K_ID ASC');
+        $req->execute();
+        $listCosts = $req->fetchAll(PDO::FETCH_ASSOC);
+        $arrayCosts = array();
+
+        foreach ($listCosts as $costs) {
+            $cost = new Cost($costs);
+            array_push($arrayCosts, $cost);
+        }
+        return $arrayCosts;
+    }
+
+    public function ajoutRecette($recette) {
+        $req = $this->bdd->prepare('INSERT INTO t_recipe VALUES (NULL, :name, :cost, :difficulty, :persons, :photo, :prepTime, :cookTime, :ingredients, :validate, :user)');
+        $req->bindValue(':name', $recette->getName(), PDO::PARAM_STR);
+        $req->bindValue(':cost', $recette->getCost(), PDO::PARAM_STR);
+        $req->bindValue(':difficulty', $recette->getDifficulty(), PDO::PARAM_STR);
+        $req->bindValue(':persons', $recette->getPersons(), PDO::PARAM_STR);
+        $req->bindValue(':photo', $recette->getPicture(), PDO::PARAM_STR);
+        $req->bindValue(':prepTime', $recette->getPrepTime(), PDO::PARAM_STR);
+        $req->bindValue(':cookTime', $recette->getCookTime(), PDO::PARAM_STR);
+        $req->bindValue(':ingredients', $recette->getIngredients(), PDO::PARAM_STR);
+        $req->bindValue(':validate', $recette->getValidate(), PDO::PARAM_STR);
+        $req->bindValue(':user', $recette->getIdUser(), PDO::PARAM_STR);
+        $req->execute();
+        return $this->bdd->lastInsertId();
+    }
+
+    public function modifRecette($recette) {
+        $req = $this->bdd->prepare('UPDATE t_recipe SET K_ID = :id, F_Name = :name, K_Cost = :cost, K_Difficulty = :difficulty, F_Persons = :persons, F_Photo = :photo, F_PrepTime = :prepTime, F_CookTime = :cookTime, F_Ingredients = :ingredients, F_Validate = :validate, K_User = :user)');
+        $req->bindValue(':id', $recette->getId(), PDO::PARAM_STR);
+        $req->bindValue(':name', $recette->getName(), PDO::PARAM_STR);
+        $req->bindValue(':cost', $recette->getCost(), PDO::PARAM_STR);
+        $req->bindValue(':difficulty', $recette->getDifficulty(), PDO::PARAM_STR);
+        $req->bindValue(':persons', $recette->getPersons(), PDO::PARAM_STR);
+        $req->bindValue(':photo', $recette->getPicture(), PDO::PARAM_STR);
+        $req->bindValue(':prepTime', $recette->getPrepTime(), PDO::PARAM_STR);
+        $req->bindValue(':cookTime', $recette->getCookTime(), PDO::PARAM_STR);
+        $req->bindValue(':ingredients', $recette->getIngredients(), PDO::PARAM_STR);
+        $req->bindValue(':validate', $recette->getValidate(), PDO::PARAM_STR);
+        $req->bindValue(':user', $recette->getIdUser(), PDO::PARAM_STR);
+        $req->execute();
+        return $this->bdd->lastInsertId();
+    }
+
+    public function ajoutStep($step) {
+        $req = $this->bdd->prepare('INSERT INTO t_steps VALUES (NULL, :stepNumber, :content, :recipeID)');
+        $req->bindValue(':stepNumber', $step->getStepNumber(), PDO::PARAM_STR);
+        $req->bindValue(':content', $step->getContent(), PDO::PARAM_STR);
+        $req->bindValue(':recipeID', $step->getRecipeId(), PDO::PARAM_STR);
+        $req->execute();
+    }
 }
 ?>

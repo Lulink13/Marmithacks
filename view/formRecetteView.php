@@ -12,33 +12,40 @@
     <body>
         <?php require_once 'header.php';?>
         <div id="body_form_recette">
-            <form id="form_recette" action="post" href="formRecette.php">
+            <form id="form_recette" method="post" action="formRecette.php">
                 <div id="form_recette-titre">Ajouter une recette</div>
-                <div id="form_recette-name">Titre de la recette<input type="text" required="required"></div>
-                <div id="form_recette-persons">Pour combien de personnes<input type="text" required="required"></div>
-                <div id="form_recette-cost">
-                    Coût
-                    <select>
-                        <option value="Peu coûteux">Peu coûteux</option>
-                        <option value="Moyen">Moyen</option>
-                        <option value="Plutôt coûteux">Plutôt coûteux</option>
-                    </select>
-                    </div>
-                <div id="form_recette-diffculty">
-                    Difficulté
-                    <select>
-                        <option value="Très facile">Très facile</option>
-                        <option value="Facile">Facile</option>
-                        <option value="Moyen">Moyen</option>
-                        <option value="Difficile">Difficile</option>
+                <div id="form_recette-name">Titre de la recette<input type="text" name="name" required="required"></div>
+                <div id="form_recette-category">
+                    Catégorie
+                    <select name="category">
+                        <?php foreach ($listeCategories as $category) { ?>
+                            <option value=<?php echo $category->getId();?>><?php echo $category->getName();?></option>
+                        <?php } ?>
                     </select>
                 </div>
-                <div id="form_recette-picture">Ajouter une photo<input type="file" required="required"></div>
-                <div id="form_recette-preptime">Temps de préparation<input type="text" required="required"></div>
-                <div id="form_recette-cooktime">Temps de cuisson<input type="text" required="required"></div>
+                <div id="form_recette-persons">Pour combien de personnes<input type="number" name="persons" required="required"></div>
+                <div id="form_recette-cost">
+                    Coût
+                    <select name="cost">
+                        <?php foreach ($listeCosts as $cost) { ?>
+                            <option value=<?php echo $cost->getId();?>><?php echo $cost->getName();?></option>
+                        <?php } ?>
+                    </select>
+                    </div>
+                <div id="form_recette-difficulty">
+                    Difficulté
+                    <select name="difficulty">
+                        <?php foreach ($listeDifficulties as $difficulty) { ?>
+                            <option value=<?php echo $difficulty->getId();?>><?php echo $difficulty->getName();?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div id="form_recette-picture">Ajouter une photo<input type="file" name="picture"></div>
+                <div id="form_recette-preptime">Temps de préparation (en min)<input type="number" name="prepTime" required="required"></div>
+                <div id="form_recette-cooktime">Temps de cuisson (en min)<input type="number" name="cookTime" required="required"></div>
                 <div id="form_recette-ingredients"><div>Ingrédients (précisez la quantité, l'unité de mesure et l'ingrédient)</div><textarea name="ingredients" required="required"></textarea></div>
                 <div id="form_recette-etapes"><div>Préparation (passez des lignes entre chaque étape)</div><textarea name="etapes" required="required"></textarea></div>
-                <input id="form_recette-valid" type="submit" value="Valider" id="valider">
+                <input id="form_recette-valid" type="submit" name="valider" value="Valider">
             </form>
         </div>
         <?php require_once 'footer.php';?>

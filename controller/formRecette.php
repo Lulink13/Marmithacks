@@ -11,9 +11,12 @@ if (isset($_SESSION['user'])) {
     } else {
         $userPicture = '../assets/images/default_user.png';
     }
-    if (isset($_POST['Valider'])) {
-        require_once 'ajoutUser.php';
+    if (isset($_POST['valider'])) {
+        require_once 'ajoutRecette.php';
     } else {
+        $listeCosts = $bdd->getListCosts();
+        $listeDifficulties = $bdd->getListDifficulties();
+        $listeCategories = $bdd->getListCategories();
         require_once '../view/formRecetteView.php';
     }
     

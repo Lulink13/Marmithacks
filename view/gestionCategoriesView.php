@@ -25,6 +25,7 @@
                 </tbody>
             </table>
         </div>
+        <?php require_once 'footer.php';?>
         <div id="gestion_categories-window_cover"></div>
         <script src="../assets/js/bootstrap.min.js"></script>
     </body>

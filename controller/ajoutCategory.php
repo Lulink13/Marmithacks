@@ -7,7 +7,6 @@ $attributs['F_Name'] = $_POST['name'];
 $category = new Category($attributs);
 
 if ($attributs['K_ID'] == '') {
-    echo 'a';
     echo $bdd->ajoutCategory($category);
 } else {
     $bdd->modifCategory($category);
