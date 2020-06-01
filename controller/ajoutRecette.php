@@ -39,4 +39,5 @@ foreach ($arrayEtapes as $id=>$etapes) {
     $bdd->ajoutStep($step);
 }
 
+$bdd->ajoutRecipeCategory($idRecette, $_POST['category']);
 ?>

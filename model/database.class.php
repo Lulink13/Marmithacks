@@ -223,5 +223,12 @@ class Database {
         $req->bindValue(':recipeID', $step->getRecipeId(), PDO::PARAM_STR);
         $req->execute();
     }
+
+    public function ajoutRecipeCategory($idRecipe, $idCategory) {
+        $req = $this->bdd->prepare('INSERT INTO map_recipecategory VALUES (NULL, :idRecipe, :idCategory)');
+        $req->bindValue(':idRecipe', $idRecipe, PDO::PARAM_STR);
+        $req->bindValue(':idCategory', $idCategory, PDO::PARAM_STR);
+        $req->execute();
+    }
 }
 ?>
