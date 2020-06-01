@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
     </head>
     <body id="body_connexion">
         <form id="form_connexion" method='post' action='connexion.php'>

@@ -6,7 +6,6 @@
     font-family: Lobster;
     src: url("../fonts/Lobster-Regular.ttf");
   }
-
 html, body {
     margin: 0;
     width: 100%;
@@ -16,7 +15,6 @@ html, body {
 
 
 /*/////////////////////// HEADER ///////////////////////*/
-
 #header {
     background: linear-gradient(#17abfd, #0062e0);
     height: 100px;
@@ -40,7 +38,6 @@ html, body {
     text-decoration: none;
     color: #fff;
 }
-
 #header-bloc_right {
     display: flex;
     justify-content: space-between;
@@ -102,8 +99,33 @@ html, body {
 }
 
 
-/*/////////////////// PAGE CONNEXION /////////////////////*/
+/*/////////////////////// FOOTER ///////////////////////*/
+#footer {
+    background: linear-gradient(180deg, #2f79df, #002d9b);
+    height: 70px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#footer-text, #footer p a {
+    font-family: Lobster;
+    font-size: 20px;
+    color: #ffffff !important;
+    margin: 5px 5px;
+    user-select: none;
+}
+#footer-copyright {
+    font-size: 12px;
+    color: #BBBBBB;
+    position: fixed;
+    bottom: -14px;
+}
 
+
+/*/////////////////// PAGE CONNEXION /////////////////////*/
 :root {
     --input-padding-x: .75rem;
     --input-padding-y: .75rem;
@@ -178,8 +200,8 @@ html, body {
     height: 50px;
 }
 
-/*/////////////// GESTION USERS ////////////////*/
 
+/*/////////////// GESTION USERS ////////////////*/
 #body-gestion_users {
     display: flex;
     flex-direction: column;
@@ -229,7 +251,6 @@ html, body {
     height: 100px;
     align-items: center;
 }
-
 #gestion_users-window_cover {
     position: absolute;
     left: 0;
@@ -274,8 +295,8 @@ html, body {
     background-color: #de4041;
 }
 
-/*/////////////// MODIF USER //////////////////*/
 
+/*/////////////// MODIF USER //////////////////*/
 #form_modif_user {
     width: 500px;
     display: flex;
@@ -284,7 +305,6 @@ html, body {
     background-color: #eee;
     font-size: 20px;
 }
-
 #form_modif_user div {
     width: 400px;
     display: flex;
@@ -300,27 +320,22 @@ html, body {
     margin-bottom: 10px;
     font-size: 25px;
 }
-
 #form_modif_user-name input, #form_modif_user-surname input, #form_modif_user-username input, #form_modif_user-password input, #form_modif_user-mail input {
     border-radius: 3px;
     border: 1px solid grey;
     padding-left: 10px;
 }
-
 #form_modif_user-admin input {
     width: 30px;
     height: 30px;
 }
-
 #form_modif_user-picture input {
     width: 165px;
 }
-
 #form_modif_user-bloc_valid {
     margin-top: 35px;
     margin-bottom: 30px !important;
 }
-
 #form_modif_user-bloc_valid div {
     width: 130px;
     height: 45px;
@@ -329,17 +344,14 @@ html, body {
     align-items: center;
     border-radius: 15px;
     cursor: pointer;
-}  
-
+}
 #form_modif_user-btn_valid {
     border: 1px solid black;
     background-color: #FFF;
 }
 
 
-
 /*/////////////////// PAGE INSCRIPTION /////////////////////*/
-
 #body_inscription {
     display: flex;
     justify-content: center;
@@ -377,11 +389,9 @@ html, body {
     margin-top: 20px !important;
     margin-bottom: 20px;
 }
-
 #form_inscription-picture input {
     border: 0 !important;
 }
-
 #form_inscription-valider {
     appearance: none;
     -webkit-appearance: none;
