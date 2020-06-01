@@ -115,7 +115,7 @@ html, body {
 }
 #form_connexion {
     width: 500px;
-    height: 380px;
+    height: 340px;
     background-color: #4b9dfd;
     display: flex;
     flex-direction: column;
@@ -166,6 +166,11 @@ html, body {
     color: #777;
 }
 
+#form_connexion a {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 15px;
+}
 
 
 #toolbar {
@@ -374,7 +379,7 @@ html, body {
 }
 
 #form_inscription-picture input {
-    border: 0;
+    border: 0 !important;
 }
 
 #form_inscription-valider {
@@ -385,4 +390,73 @@ html, body {
     border-radius: 5px;
     margin-top: 40px;
     margin-bottom: 40px;
+}
+
+#container_inscription_success {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eee;
+    border: 1px solid #000;
+    border-radius: 3px;
+    margin-top: -200px;
+}
+#container_inscription_success div {
+    text-align: center;
+}
+
+
+/*/////////////////// AJOUT RECETTE /////////////////////*/
+
+#body_form_recette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#form_recette {
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#form_recette div {
+    width: 570px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#form_recette-titre {
+    justify-content: center !important;
+    font-size: 27px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#form_recette div input, #form_recette div select, #form_recette div textarea {
+    width: 255px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#form_recette div textarea {
+    max-height: 160px;
+    min-height: 70px;
+}
+#form_recette-ingredients div, #form_recette-etapes div {
+    width: 280px;
+}
+#form_recette-valid {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 110px;
+    height: 35px;
+    font-size: 18px;
+    cursor: pointer;
 }

@@ -6,28 +6,28 @@
         <title>INSCRIPTION</title>
     </head>
     <body id="body_inscription">
-        <form id="form_inscription" method='post' action='inscription.php'>
+        <form id="form_inscription" method='post' action='inscription.php' enctype="multipart/form-data">
             <div id="form_inscription-titre">Inscription</div>
-            <div class="form_inscription-prenom">
-                Prénom<input type="text" required>
+            <div id="form_inscription-prenom">
+                Prénom<input type="text" name="userName" required>
             </div>
-            <div class="form_inscription-nom">
-                Nom<input type="text" required>
+            <div id="form_inscription-nom">
+                Nom<input type="text" name="userSurname" required>
             </div>
-            <div class="form_inscription-pseudo">
-                Pseudo<input type="text" required>
+            <div id="form_inscription-pseudo">
+                Pseudo<input type="text" name="userUsername" required>
             </div>
-            <div class="form_inscription-mail">
-                Mail<input type="mail" required>
+            <div id="form_inscription-mail">
+                Mail<input type="email" name="userMail" required>
             </div>
-            <div class="form_inscription-password">
-                Mot de passe<input type="password" required>
+            <div id="form_inscription-password">
+                Mot de passe<input type="password" name="userPassword" required>
             </div>
-            <div class="form_inscription-passwordConfirm">
-                Confirmer mot de passe<input type="password" required>
+            <div id="form_inscription-passwordConfirm">
+                Confirmer mot de passe<input type="password" name="userPasswordConfirm" required>
             </div>
-            <div class="form_inscription-picture">
-                Image de profil<input type="file">
+            <div id="form_inscription-picture">
+                Image de profil<input type="file" name="userPicture" id="userPicture">
             </div>
             <input type='submit' id="form_inscription-valider" name='inscrire' value='VALIDER'>
         </form>

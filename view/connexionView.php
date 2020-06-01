@@ -18,6 +18,7 @@
             </div>
             <?php echo $error;?>
             <input type='submit' name='connecter' value='SE CONNECTER'>
+            <a href="home.php">Retour</a>
         </form>
     </body>
 </html>

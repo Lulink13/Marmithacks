@@ -43,7 +43,7 @@ $(function() {
             }
         })
         var fd = new FormData();
-        fd.append('file',pictureUser);
+        fd.append('userPicture',pictureUser);
 
         $.ajax({
             url: '../controller/uploadPicture.php',

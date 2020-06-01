@@ -48,6 +48,7 @@ class Database {
         return $arrayUser;
     }
 
+
     public function deleteUser($id) {
         $req = $this->bdd->prepare('DELETE FROM t_user WHERE K_ID = :id');
         $req->bindValue(':id', $id, PDO::PARAM_STR);
