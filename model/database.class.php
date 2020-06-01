@@ -8,7 +8,7 @@ class Database {
             $host = 'localhost';
             $dbname = 'marmithacks';
             $user = 'root';
-            $mdp = 'C7w6vrX52V';
+            $mdp = '';
         } else {
             $host = 'mysql-marmithacks.alwaysdata.net';
             $dbname = 'marmithacks_bdd';
@@ -76,6 +76,37 @@ class Database {
         $req->bindValue(':picture', $user->getPicture(), PDO::PARAM_STR);
         $req->bindValue(':id', $user->getId(), PDO::PARAM_STR);
         $req->execute();
+    }
+
+    public function getListTagCategories() {
+        $req = this->bdd->prepare('SELECT * FROM t_tagcategory');
+        $req->execute();
+        $listTagCategory = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrayTagCategoty = array();
+
+        foreach ($listTagCategory as $tagCategories) {
+            $tagCategory = new TagCategory($tagCategories);
+            $tagCategory->setTagList(this->getListTags($tagCategory->id));
+            array_push($arrayTagCategoty, $tagCategory);
+        }
+        return $arrayUser;
+    }
+
+    public function getListTags($TagCategoryId) {
+        $req = this->bdd->prepare('SELECT * FROM t_tag WHERE K_TagCategory = :id')
+        $req->bindValue(':id', $TagCategoryId, PDO::PARAM_STR);
+        $req->execute();
+        $listTags = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrayTag = array();
+
+        foreach ($listTags as $tags) {
+            $tag = new Tag($tags);
+            array_push($arrayTag, $tag);
+        }
+        return $arrayTag;
+
     }
 
 }
