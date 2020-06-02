@@ -143,6 +143,7 @@ html, body {
 
 .vignette_home {
     width: 220px;
+    height: 300px;
     margin: 27px;
     border-radius: 5px;
     box-shadow: #000 0px 0px 6px;

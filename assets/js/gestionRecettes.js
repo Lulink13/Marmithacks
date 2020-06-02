@@ -1,4 +1,43 @@
 $(function() {
+/*
+    $(document).on('click', '#vignette_user-btn_modif', function() {
+        window.location.href = "../controller/formRecette.php?id_recette=1";
+    })
+
+    $(document).on('click', '#form_modif_user-btn_valid', function() {
+        var idUser = $('#form_modif_user').attr('id_user');
+        var nameUser = $('#form_modif_user-name input').val();
+        var surnameUser = $('#form_modif_user-surname input').val();
+        var usernameUser = $('#form_modif_user-username input').val();
+        var passwordUser = $('#form_modif_user-password input').val();
+        var mailUser = $('#form_modif_user-mail input').val();
+        var adminUser = $('#form_modif_user-admin input').prop('checked');
+        var pictureUser = $('#form_modif_user-picture input')[0].files[0];
+        var picturePath = pictureUser.name;
+        $.ajax({
+            method: 'post',
+            url: '../controller/ajoutUser.php',
+            data: 'id='+idUser+'&name='+nameUser+'&surname='+surnameUser+'&username='+usernameUser+'&password='+passwordUser+'&mail='+mailUser+'&admin='+adminUser+'&path='+picturePath,
+            success: function(html) {
+                
+            }
+        })
+        var fd = new FormData();
+        fd.append('picture',pictureUser);
+
+        $.ajax({
+            url: '../controller/uploadPicture.php',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(html) {
+                window.location.href = 'gestionUtilisateurs.php';
+            }
+        });
+    })
+*/
+
     $(document).on('click', '#vignette_user-btn_suppr', function() {
         $.ajax({
             method: 'post',

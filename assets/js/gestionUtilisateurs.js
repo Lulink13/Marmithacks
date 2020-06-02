@@ -55,7 +55,6 @@ $(function() {
                 window.location.href = 'gestionUtilisateurs.php';
             }
         });
-        
     })
 
     $(document).on('click', '#form_modif_user-btn_annul', function() {
