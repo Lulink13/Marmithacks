@@ -1,3 +1,4 @@
+
 <tr class="gestion_users-vignette_user">
     <td>
         <img class="vignette_user-image" src=<?php echo $userPicture;?> alt="Avatar">
