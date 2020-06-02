@@ -15,7 +15,7 @@ class Database {
             $host = 'localhost';
             $dbname = 'marmithacks';
             $user = 'root';
-            $mdp = '';
+            $mdp = 'C7w6vrX52V';
             //C7w6vrX52V
         } else {
             $host = 'mysql-marmithacks.alwaysdata.net';
@@ -173,7 +173,7 @@ class Database {
         }
         return $arrayRecipe;
     }
-    
+
     public function getListDifficulties() {
         $req = $this->bdd->prepare('SELECT * FROM t_difficulty ORDER BY K_ID ASC');
         $req->execute();
@@ -231,6 +231,12 @@ class Database {
         $req->bindValue(':user', $recette->getIdUser(), PDO::PARAM_STR);
         $req->execute();
         return $this->bdd->lastInsertId();
+    }
+
+    public function deleteRecette($id) {
+        $req = $this->bdd->prepare('DELETE FROM t_recipe WHERE K_ID = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->execute();
     }
 
     public function ajoutStep($step) {

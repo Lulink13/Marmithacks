@@ -40,4 +40,5 @@ foreach ($arrayEtapes as $id=>$etapes) {
 }
 
 $bdd->ajoutRecipeCategory($idRecette, $_POST['category']);
+header('Location: gestionMesRecettes.php');
 ?>

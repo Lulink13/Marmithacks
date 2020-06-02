@@ -133,6 +133,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 657px;
 }
 #form_connexion {
     width: 500px;
@@ -252,7 +253,7 @@ html, body {
     align-items: center;
 }
 #gestion_users-window_cover {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -360,6 +361,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 657px;
 }
 #body-gestion_categories table {
     width: 900px;
@@ -398,7 +400,7 @@ html, body {
 }
 
 #gestion_categories-window_cover {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -501,6 +503,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 657px;
 }
 #form_inscription {
     width: 500px;
@@ -570,6 +573,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 657px;
 }
 #form_recette {
     width: 650px;
@@ -623,6 +627,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 657px;
 }
 #body-mes_recettes table {
     width: 900px;
@@ -645,4 +650,15 @@ html, body {
     color: #000;
     border-radius: 5px;
     border: 1px solid #222;
+}
+#gestion_recettes-window_cover {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50,50,50,0.6);
+    justify-content: center;
+    align-items: center;
+    display: none;
 }

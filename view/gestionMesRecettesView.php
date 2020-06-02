@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/popper.min.js"></script>
-        <!--<script src="../assets/js/gestionRecettesUser.js"></script>-->
+        <script src="../assets/js/gestionRecettesUser.js"></script>
     </head>
     <body>
         <?php require_once 'header.php';?>
@@ -43,7 +43,7 @@
             </table>
         </div>
         <?php require_once 'footer.php';?>
-        <div id="gestion_categories-window_cover"></div>
+        <div id="gestion_recettes-window_cover"></div>
         <script src="../assets/js/bootstrap.min.js"></script>
     </body>
 </html>
