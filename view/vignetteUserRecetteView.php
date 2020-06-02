@@ -1,7 +1,7 @@
 <div >
     <tr class="gestion_recipes-vignette_recipe">
         <td>
-            <img class="vignette_recipe-image" src=<?php echo $recipePicture;?> alt="Avatar">
+            <img class="vignette_recipe-image" src="<?php echo $recipePicture;?>" alt="Avatar">
             <?php echo $actualUsersRecipe->getName();?>
         </td>                      
         <td class="vignette_user-bloc_action" id_user=<?php echo $actualUsersRecipe->getId();?>>
