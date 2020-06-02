@@ -16,11 +16,14 @@
                 <thead>
                     <tr>
                         <th>Recettes non validées</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $validate = 0;
+                    $idUser = 'ALL';
                     require 'listeUsersRecettes.php';
                     ?>
                 </tbody>
@@ -29,6 +32,8 @@
                 <thead>
                     <tr>
                         <th>Recettes validées</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,7 +45,7 @@
             </table>
         </div>
         <?php require_once 'footer.php';?>
-        <div id="gestion_categories-window_cover"></div>
+        <div id="gestion_recettes-window_cover"></div>
         <script src="../assets/js/bootstrap.min.js"></script>
     </body>
 </html>

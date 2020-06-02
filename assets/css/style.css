@@ -782,9 +782,9 @@ object-fit: contain;
 }
 #display_recette-bloc_config div {
     width: 50%;
-    padding-left: 20px;
     margin-top: 3px;
     margin-bottom: 3px;
+    text-align: center;
 }
 
 #display_recette-separateur_ingredients, #display_recette-separateur_etapes {
@@ -823,4 +823,81 @@ object-fit: contain;
 }
 .content_etape {
     width: 75%;
+}
+
+
+
+/*////////////////////////////////// GESTION RECETTES ////////////////////////////////*/
+
+
+#body-gestion_recettes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 657px;
+}
+#body-gestion_recettes table {
+    width: 900px;
+}
+.vignette_recipe-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 35px;
+}
+#mes_recettes-btn_ajout {
+    width: 300px;
+    height: 60px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #222;
+}
+#gestion_recettes-window_cover {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50,50,50,0.6);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+#container_confirm_valid {
+    width: 400px;
+    height: 125px;
+    background-color: #EEE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    border-radius: 4px;
+}
+#container_confirm_valid-text {
+    width: 400px;
+    text-align: center;
+    font-size: 20px;
+}
+#container_confirm_valid-valider, #container_confirm_valid-annuler {
+    width: 75px;
+    height: 35px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#container_confirm_valid-valider {
+    background-color: green;
+}
+#container_confirm_valid-annuler {
+    background-color: #de4041;
 }

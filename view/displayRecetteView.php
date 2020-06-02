@@ -19,8 +19,8 @@
                 <div id="display_recette-bloc_config">
                     <div id="display_recette-nb_persons"><?= 'Pour '.$recette->getPersons().' personne(s)';?></div>
                     <div>Difficulté : <?= $difficulty;?></div>
-                    <div>Temps de préparation : <?= $recette->getPrepTime().' min';?></div>
                     <div>Coût : <?= $cost;?></div>
+                    <div>Temps de préparation : <?= $recette->getPrepTime().' min';?></div>
                     <div>Temps de cuisson : <?= $recette->getCookTime().' min';?></div>
                 </div>
                 <div id="display_recette-separateur_ingredients"><div class="barre_separation"></div>Ingrédients<div class="barre_separation"></div></div>

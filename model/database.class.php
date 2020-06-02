@@ -159,12 +159,12 @@ class Database {
     }
 
     public function getListUsersRecipes($validate,$userId) {
-        if ($userId = "ALL") {
+        if ($userId == "ALL") {
             $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE F_Validate = :validate');
         } else {
             $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE K_USER = :id AND F_Validate = :validate');
+            $req->bindValue(':id', $userId, PDO::PARAM_STR);
         }
-        $req->bindValue(':id', $userId, PDO::PARAM_STR);
         $req->bindValue(':validate', $validate, PDO::PARAM_STR);
         $req->execute();
         $listRecipes = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -305,6 +305,13 @@ class Database {
         $req = $this->bdd->prepare('INSERT INTO map_recipecategory VALUES (NULL, :idRecipe, :idCategory)');
         $req->bindValue(':idRecipe', $idRecipe, PDO::PARAM_STR);
         $req->bindValue(':idCategory', $idCategory, PDO::PARAM_STR);
+        $req->execute();
+    }
+
+    public function validateRecette($idRecipe) {
+        echo $idRecipe;
+        $req = $this->bdd->prepare('UPDATE t_recipe SET F_Validate = 1 WHERE K_ID = :id');
+        $req->bindValue(':id', $idRecipe, PDO::PARAM_STR);
         $req->execute();
     }
 }
