@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html lang='fr'>
     <head>
         <meta charset="utf-8">
+        <title>ACCUEIL</title>
         <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
@@ -10,6 +11,11 @@
     </head>
     <body>
         <?php require_once 'header.php';?>
+        <div id="body-home">
+            <div id="home-container_liste_recettes">
+
+            </div>
+        </div>
         <script src="../assets/js/bootstrap.min.js"></script>
         <?php require_once 'footer.php';?>
     </body>

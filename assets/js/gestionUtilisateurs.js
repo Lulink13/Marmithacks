@@ -12,11 +12,11 @@ $(function() {
         })
     })
 
-    $(document).on('click', '#vignette_user-btn_modif', function() {
+    $(document).on('click', '.vignette_user-btn_modif', function() {
         $.ajax({
             method: 'post',
             url: '../controller/formUser.php',
-            data: 'id_user='+$(this).parent().attr('id_user'),
+            data: 'id_user='+$(this).prev().val(),
             success: function(html) {
                 $('#gestion_users-window_cover').html(html);
                 $('#gestion_users-window_cover').css({"display":"flex"});
@@ -61,11 +61,11 @@ $(function() {
     })
 
     
-    $(document).on('click', '#vignette_user-btn_suppr', function() {
+    $(document).on('click', '.vignette_user-btn_suppr', function() {
         $.ajax({
             method: 'post',
             url: '../view/confirmSuppressionView.php',
-            data: 'id_user='+$(this).parent().attr('id_user'),
+            data: 'id_user='+$(this).prev().prev().val(),
             success: function(html) {
                 $('#gestion_users-window_cover').html(html);
                 $('#gestion_users-window_cover').css({"display":"flex"});
