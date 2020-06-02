@@ -188,6 +188,13 @@ class Database {
         return $arrayRecipe;
     }
 
+    public function getDifficulty($id) {
+        $req = $this->bdd->prepare('SELECT * FROM t_difficulty WHERE K_ID = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->execute();
+        return new Difficulty($req->fetch(PDO::FETCH_ASSOC));
+    }
+
     public function getListDifficulties() {
         $req = $this->bdd->prepare('SELECT * FROM t_difficulty ORDER BY K_ID ASC');
         $req->execute();
@@ -199,6 +206,13 @@ class Database {
             array_push($arrayDifficulties, $difficulty);
         }
         return $arrayDifficulties;
+    }
+
+    public function getCost($id) {
+        $req = $this->bdd->prepare('SELECT * FROM t_cost WHERE K_ID = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->execute();
+        return new Cost($req->fetch(PDO::FETCH_ASSOC));
     }
 
     public function getListCosts() {
