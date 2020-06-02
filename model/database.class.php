@@ -3,6 +3,7 @@ require_once 'user.class.php';
 require_once 'category.class.php';
 require_once 'tagCategory.class.php';
 require_once 'tag.class.php';
+require_once 'recette.class.php';
 class Database {
     private $bdd;
 
@@ -11,7 +12,8 @@ class Database {
             $host = 'localhost';
             $dbname = 'marmithacks';
             $user = 'root';
-            $mdp = 'C7w6vrX52V';
+            $mdp = '';
+            //C7w6vrX52V
         } else {
             $host = 'mysql-marmithacks.alwaysdata.net';
             $dbname = 'marmithacks_bdd';
@@ -153,5 +155,22 @@ class Database {
 
     }
 
+    public function getListUsersRecipes($validate,$userId) {
+        $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE K_USER = :id AND F_Validate = :validate');
+        $req->bindValue(':id', $userId, PDO::PARAM_STR);
+        $req->bindValue(':validate', $validate, PDO::PARAM_STR);
+        $req->execute();
+        $listRecipes = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrayRecipe = array();
+
+        foreach ($listRecipes as $recipes) {
+            $recipe = new Recette($recipes);
+            array_push($arrayRecipe, $recipe);
+        }
+        return $arrayRecipe;
+    }
 }
+
+
 ?>

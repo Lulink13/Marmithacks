@@ -14,7 +14,7 @@
                     <a class="dropdown-item" href="../controller/gestionUtilisateurs.php">Gestion utilisateurs</a>
                     <a class="dropdown-item" href="../controller/gestionCategories.php">Gestion catégories</a>
                 <?php } ?>
-                <a class="dropdown-item" href="../controller/formRecette.php">Ajouter une recette</a>
+                <a class="dropdown-item" href="../controller/gestionMesRecettes.php">Mes recettes</a>
                 <a class="dropdown-item" href="#">Profil</a>
                 <a class="dropdown-item" href="../controller/deconnexion.php">Déconnexion</a>
             </div>
