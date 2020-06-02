@@ -1,5 +1,5 @@
 <?php
-
+$idUser = 'ALL';
 $listUsersRecipes = $bdd->getListUsersRecipes($validate,$idUser);
 foreach ($listUsersRecipes as $actualUsersRecipe) {
     if ($actualUsersRecipe->getPicture() != '' && file_exists('../data/recipe_pictures/'.$actualUsersRecipe->getPicture())) {

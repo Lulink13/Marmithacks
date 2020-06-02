@@ -1,10 +1,13 @@
 <?php
 
 /* Getting file name */
-$filename = $_FILES['userPicture']['name'];
-
+$filename = $_FILES['picture']['name'];
 /* Location */
-$location = '../data/profile_pictures/'.$filename;
+if (!isset($typePhoto)) {
+   $typePhoto = 'profile';
+}
+
+$location = '../data/'.$typePhoto.'_pictures/'.$filename;
 $uploadOk = 1;
 $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
 
@@ -19,7 +22,7 @@ if($uploadOk == 0){
    echo 0;
 }else{
    /* Upload file */
-   if (move_uploaded_file($_FILES['userPicture']['tmp_name'],$location)) {
+   if (move_uploaded_file($_FILES['picture']['tmp_name'],$location)) {
       //echo $location;
    }else{
       //echo 0;

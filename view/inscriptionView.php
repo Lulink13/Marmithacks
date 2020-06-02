@@ -5,7 +5,6 @@
         <title>INSCRIPTION</title>
         <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
         <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
-        <title>INSCRIPTION</title>
     </head>
     <body id="body_inscription">
         <form id="form_inscription" method='post' action='inscription.php' enctype="multipart/form-data">

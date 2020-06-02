@@ -11,7 +11,7 @@ $attributs['F_Name'] = $_POST['name'];
 $attributs['K_Cost'] = $_POST['cost'];
 $attributs['K_Difficulty'] = $_POST['difficulty'];
 $attributs['F_Persons'] = $_POST['persons'];
-$attributs['F_Photo'] = $_POST['picture'];
+$attributs['F_Photo'] = $_FILES['picture']['name'];
 $attributs['F_PrepTime'] = $_POST['prepTime'];
 $attributs['F_CookTime'] = $_POST['cookTime'];
 $attributs['F_Ingredients'] = nl2br($_POST['ingredients']);
@@ -38,6 +38,8 @@ foreach ($arrayEtapes as $id=>$etapes) {
     $step = new Step($params);
     $bdd->ajoutStep($step);
 }
+$typePhoto = 'recipe';
+require_once 'uploadPicture.php';
 
 $bdd->ajoutRecipeCategory($idRecette, $_POST['category']);
 header('Location: gestionMesRecettes.php');

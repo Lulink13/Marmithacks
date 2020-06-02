@@ -13,6 +13,7 @@
                 <?php if ($admin == '1') { ?>
                     <a class="dropdown-item" href="../controller/gestionUtilisateurs.php">Gestion utilisateurs</a>
                     <a class="dropdown-item" href="../controller/gestionCategories.php">Gestion catégories</a>
+                    <a class="dropdown-item" href="../controller/gestionRecettes.php">Gestion recettes</a>
                 <?php } ?>
                 <a class="dropdown-item" href="../controller/gestionMesRecettes.php">Mes recettes</a>
                 <a class="dropdown-item" href="#">Profil</a>

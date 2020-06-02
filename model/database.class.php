@@ -11,7 +11,7 @@ class Database {
     private $bdd;
 
     public function __construct() {
-        if (strpos(dirname(__FILE__), 'xampp/htdocs/') !== 'true') {
+        if (strpos(dirname(__FILE__), 'xampp/htdocs/') !== false) {
             $host = 'localhost';
             $dbname = 'marmithacks';
             $user = 'root';
@@ -159,7 +159,11 @@ class Database {
     }
 
     public function getListUsersRecipes($validate,$userId) {
-        $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE K_USER = :id AND F_Validate = :validate');
+        if ($userId = "ALL") {
+            $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE F_Validate = :validate');
+        } else {
+            $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE K_USER = :id AND F_Validate = :validate');
+        }
         $req->bindValue(':id', $userId, PDO::PARAM_STR);
         $req->bindValue(':validate', $validate, PDO::PARAM_STR);
         $req->execute();
@@ -172,6 +176,14 @@ class Database {
             array_push($arrayRecipe, $recipe);
         }
         return $arrayRecipe;
+    }
+
+    public function getRecipe($id) {
+        $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE K_ID = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->execute();
+
+        return new Recette($req->fetch(PDO::FETCH_ASSOC));
     }
 
     public function getListRecipes() {
@@ -265,6 +277,20 @@ class Database {
         $req = $this->bdd->prepare('DELETE FROM t_recipe WHERE K_ID = :id');
         $req->bindValue(':id', $id, PDO::PARAM_STR);
         $req->execute();
+    }
+
+    public function getSteps($id) {
+        $req = $this->bdd->prepare('SELECT * FROM t_steps WHERE K_RecipeID = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->execute();
+        $listSteps = $req->fetchAll(PDO::FETCH_ASSOC);
+        $arraySteps = array();
+
+        foreach ($listSteps as $steps) {
+            $step = new Step($steps);
+            array_push($arraySteps, $step);
+        }
+        return $arraySteps;
     }
 
     public function ajoutStep($step) {

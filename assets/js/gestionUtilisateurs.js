@@ -32,8 +32,8 @@ $(function() {
         var passwordUser = $('#form_modif_user-password input').val();
         var mailUser = $('#form_modif_user-mail input').val();
         var adminUser = $('#form_modif_user-admin input').prop('checked');
-        var picturePath = $('#form_modif_user-picture input').val();
         var pictureUser = $('#form_modif_user-picture input')[0].files[0];
+        var picturePath = pictureUser.name;
         $.ajax({
             method: 'post',
             url: '../controller/ajoutUser.php',
@@ -43,16 +43,19 @@ $(function() {
             }
         })
         var fd = new FormData();
-        fd.append('userPicture',pictureUser);
+        fd.append('picture',pictureUser);
 
         $.ajax({
             url: '../controller/uploadPicture.php',
             type: 'post',
             data: fd,
             contentType: false,
-            processData: false
+            processData: false,
+            success: function(html) {
+                window.location.href = 'gestionUtilisateurs.php';
+            }
         });
-        window.location.href = 'gestionUtilisateurs.php';
+        
     })
 
     $(document).on('click', '#form_modif_user-btn_annul', function() {

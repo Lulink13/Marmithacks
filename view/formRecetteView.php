@@ -12,7 +12,7 @@
     <body>
         <?php require_once 'header.php';?>
         <div id="body_form_recette">
-            <form id="form_recette" method="post" action="formRecette.php">
+            <form id="form_recette" method="post" action="formRecette.php" enctype="multipart/form-data">
                 <div id="form_recette-titre">Ajouter une recette</div>
                 <div id="form_recette-name">Titre de la recette<input type="text" name="name" required="required"></div>
                 <div id="form_recette-category">
@@ -40,7 +40,7 @@
                         <?php } ?>
                     </select>
                 </div>
-                <div id="form_recette-picture">Ajouter une photo<input type="file" name="picture"></div>
+                <div id="form_recette-picture">Ajouter une photo<input type="file" id="picture" name="picture"></div>
                 <div id="form_recette-preptime">Temps de préparation (en min)<input type="number" name="prepTime" required="required"></div>
                 <div id="form_recette-cooktime">Temps de cuisson (en min)<input type="number" name="cookTime" required="required"></div>
                 <div id="form_recette-ingredients"><div>Ingrédients (précisez la quantité, l'unité de mesure et l'ingrédient)</div><textarea name="ingredients" required="required"></textarea></div>
