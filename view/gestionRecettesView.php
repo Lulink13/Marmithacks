@@ -17,7 +17,6 @@
                     <tr>
                         <th>Recettes non validées</th>
                         <th></th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +31,6 @@
                 <thead>
                     <tr>
                         <th>Recettes validées</th>
-                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
