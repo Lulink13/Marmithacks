@@ -13,7 +13,7 @@
         <?php require_once 'header.php';?>
         <div id="body-home">
             <div id="home-container_liste_recettes">
-
+                <?php require_once 'listeRecettesHome.php';?>
             </div>
         </div>
         <script src="../assets/js/bootstrap.min.js"></script>

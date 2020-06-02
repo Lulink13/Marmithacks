@@ -174,6 +174,20 @@ class Database {
         return $arrayRecipe;
     }
 
+    public function getListRecipes() {
+        $req = $this->bdd->prepare('SELECT * FROM t_recipe WHERE F_Validate = 1');
+        $req->execute();
+        $listRecipes = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrayRecipe = array();
+
+        foreach ($listRecipes as $recipes) {
+            $recipe = new Recette($recipes);
+            array_push($arrayRecipe, $recipe);
+        }
+        return $arrayRecipe;
+    }
+
     public function getListDifficulties() {
         $req = $this->bdd->prepare('SELECT * FROM t_difficulty ORDER BY K_ID ASC');
         $req->execute();

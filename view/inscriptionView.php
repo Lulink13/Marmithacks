@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html lang='fr'>
     <head>
         <meta charset="utf-8">
+        <title>INSCRIPTION</title>
         <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
         <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
         <title>INSCRIPTION</title>

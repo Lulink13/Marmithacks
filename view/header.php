@@ -22,7 +22,7 @@
     <?php } else { ?>
         <div id="header-bloc_right">
             <a id="header-btn_inscription" href="inscription.php">Inscription</a>
-            <a id="header-btn_connexion" href="connexion.php"><img label=">" src="../assets/images/picto_login.png">SE CONNECTER</a>
+            <a id="header-btn_connexion" href="connexion.php"><img alt=">" src="../assets/images/picto_login.png">SE CONNECTER</a>
         </div>
     <?php } ?>
  

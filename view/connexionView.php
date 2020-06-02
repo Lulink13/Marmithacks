@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html lang='fr'>
     <head>
         <meta charset="utf-8">
+        <title>CONNEXION</title>
         <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
@@ -14,7 +15,7 @@
                 <label for="inputEmail">Adresse mail</label>
             </div>
             <div class="form-label-group">
-                <input type="password" id="inputPwd" name="inputPwd" class="form-control" placeholder="Mot de passe" required autofocus>
+                <input type="password" id="inputPwd" name="inputPwd" class="form-control" placeholder="Mot de passe" required>
                 <label for="inputPwd">Mot de passe</label>
             </div>
             <?php echo $error;?>
